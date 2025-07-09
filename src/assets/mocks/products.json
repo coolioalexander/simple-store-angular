@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Sony WH-1000XM5",
+    "description": "Sony WH-1000XM5 Wireless Noise-Canceling Headphones",
+    "image": "images/product01.jpg",
+    "price": 49
+  },
+  {
+    "id": 2,
+    "name": "Apple Watch Series 9",
+    "description": "Apple Watch Series 9 (GPS, 41 mm or 45 mm)",
+    "image": "images/product02.jpg",
+    "price": 115
+  },
+  {
+    "id": 7,
+    "name": "VisionX VR Headset",
+    "description": "Top-View Virtual Reality Headset with Immersive 360° Experience and Ergonomic Design",
+    "image": "images/product07.jpg",
+    "price": 89
+  },
+  {
+    "id": 3,
+    "name": "Polaroid Now Gen 3",
+    "description": "Polaroid Now Generation 3 Instant Camera",
+    "image": "images/product03.jpg",
+    "price": 75
+  },
+  {
+    "id": 5,
+    "name": "Samsung BAR Plus USB 3.1",
+    "description": "Samsung BAR Plus USB 3.1 Flash Drive – 64GB, Metal Design, High-Speed Performance",
+    "image": "images/product05.jpg",
+    "price": 19
+  },
+  {
+    "id": 4,
+    "name": "Samsung Galaxy Watch 6",
+    "description": "Samsung Galaxy Watch 6 (40 mm & 44 mm)",
+    "image": "images/product04.jpg",
+    "price": 99
+  },
+  {
+    "id": 6,
+    "name": "Neon Cyberbuds X1",
+    "description": "Wireless Earbuds with Neon Cyberpunk-Style Lighting and Immersive Sound",
+    "image": "images/product06.jpg",
+    "price": 39
+  },
+  {
+    "id": 8,
+    "name": "HomeSense Hub",
+    "description": "Rendering Smart Home Device with Voice Control and Real-Time Automation Features",
+    "image": "images/product08.jpg",
+    "price": 59
+  }
+]

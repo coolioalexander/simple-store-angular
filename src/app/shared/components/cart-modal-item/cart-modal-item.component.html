@@ -1,25 +1,39 @@
 <div class="flex my-2">
   <img
-    ngSrc="images/product04.jpg"
-    width="160"
-    height="80"
-    class="w-[80px] aspect-square object-cover grayscale-50 rounded"
+    ngSrc="{{ cartItem.product.image }}"
+    width="120"
+    height="60"
+    class="w-[60px] aspect-square object-cover grayscale-50 rounded"
   />
-  <div class="flex flex-col justify-between ml-2">
+  <div class="flex flex-col justify-between grow ml-2 pb-[0.1rem]">
     <div class="flex justify-between items-center">
-      <p class="grow text-xs text-gray-600 line-clamp-1">Samsung Galaxy Watch 6</p>
-      <p class="text-sm font-semibold text-gray-900">{{ `99` | currency: 'USD' }}</p>
+      <p class="grow text-[0.7rem] text-gray-900">
+        {{ cartItem.product.name }}
+      </p>
+      <p class="text-xs font-semibold text-gray-900">
+        {{ getItemPrice() | currency: 'USD' }}
+      </p>
     </div>
-    <span class="flex-none rounded px-[0.25rem] bg-gray-100 text-gray-900 text-[0.75rem]">In stock</span>
+    <span
+      class="self-start px-1 rounded-xs bg-green-100 text-green-900 text-[0.5rem] font-semibold"
+      >In stock</span
+    >
     <div class="flex justify-between">
-      <div class="flex items-center">
-        <ng-icon name="heroTrash" class="m-1"></ng-icon>
-        <p class="text-xs text-gray-600">Remove</p>
+      <div class="flex items-center text-[0.7rem] cursor-pointer" (click)="removeCartItem()">
+        <ng-icon name="heroTrash" class="mr-[0.1rem]"></ng-icon>
+        <p class="text-[0.6rem] text-gray-900 font-semibold">Remove</p>
       </div>
-      <div class="flex">
-        <span class="border-1 border-gray-100 text-gray-900 text-xs font-bold">-</span>
-        <span>0</span>
-        <span>+</span>
+      <div class="flex items-center px-1 border-1 border-gray-200 text-gray-900 text-[0.65rem] font-semibold">
+        <ng-icon name="heroMinus" class="cursor-pointer" (click)="decrementCounter()"></ng-icon>
+        <input
+          class="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none
+          w-4 text-center border-0 focus:outline-none mx-[2px]"
+          type="number"
+          min="0"
+          value="{{ cartItem.quantity }}"
+          disabled
+        />
+        <ng-icon name="heroPlus" class="cursor-pointer" (click)="incrementCounter()"></ng-icon>
       </div>
     </div>
   </div>

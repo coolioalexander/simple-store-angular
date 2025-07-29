@@ -12,11 +12,11 @@ import { AsyncPipe } from '@angular/common';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
-  public products$: Observable<Product[] | undefined> = of(undefined); 
+  products$: Observable<Product[] | undefined> = of(undefined); 
 
-  constructor(private api: ApiService) {}
+  constructor(private apiService: ApiService) {}
 
-  public ngOnInit(): void {
-    this.products$ = this.api.getProducts$();
+  ngOnInit(): void {
+    this.products$ = this.apiService.getProducts$();
   }
 }

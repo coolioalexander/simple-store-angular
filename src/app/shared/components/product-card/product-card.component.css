@@ -2,4 +2,5 @@
   position: relative;
   margin: 1rem 1rem;
   border: solid 1px #f3f4f6;
+  cursor: pointer;
 }

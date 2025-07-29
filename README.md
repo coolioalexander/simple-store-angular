@@ -3,7 +3,7 @@
 Simple store project is a web application designed to demonstrate fundamental Angular concepts by simulating an online retail environment.
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.4.
 
-<img width="2560" height="1174" alt="simple-store" src="https://github.com/user-attachments/assets/20b5b78c-067d-4c73-9932-907b941b0da4" />
+<img alt="simple-store" src="./simple-store.png" />
 
 ## Development server
 

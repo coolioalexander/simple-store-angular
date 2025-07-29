@@ -1,25 +1,31 @@
 <img
-  ngSrc={{product?.image}}
+  ngSrc="{{ product.image }}"
   width="320"
   height="160"
   sizes="(min-width: 640px) 25vw, 100vw"
   class="w-full h-[200px] object-cover grayscale-50"
 />
 <div
-  class="absolute top-3 right-3 
-  w-7 h-7 flex items-center justify-center rounded-full bg-gray-100 text-gray-900"
+  class="absolute top-3 right-3 w-7 h-7 flex items-center justify-center rounded-full 
+  bg-gray-100 {{ favorite ? `text-red-900` : `text-gray-900` }}"
+  (click)="updateFavorite()"
 >
-  <ng-icon name="heroHeart"></ng-icon>
+  <ng-icon name="{{ favorite ? `heroHeartSolid` : `heroHeart` }}"></ng-icon>
 </div>
 <div class="p-3">
-  <p class="text-sm text-gray-600 h-10 line-clamp-2">{{ product?.name }}</p>
-  <p class="text-xs text-gray-500 h-8 line-clamp-2">{{ product?.description }}</p>
+  <p class="text-sm text-gray-900 h-10 line-clamp-2">{{ product.name }}</p>
+  <p class="text-xs text-gray-600 h-8 line-clamp-2">
+    {{ product.description }}
+  </p>
   <div class="mt-4 flex items-center justify-between">
-    <p class="text-base font-semibold text-gray-900">{{ product?.price | currency: 'USD' }}</p>
+    <p class="text-base font-semibold text-gray-900">
+      {{ product.price | currency : "USD" }}
+    </p>
     <div
-      class="w-7 h-7 flex items-center justify-center rounded-full bg-gray-200 text-gray-900"
-    >
-      <ng-icon name="heroShoppingBag"></ng-icon>
+      class="w-7 h-7 flex items-center justify-center rounded-full 
+     text-blue-500 hover:bg-blue-500 hover:text-white active:scale-95"
+      (click)="addToCart()">
+      <ng-icon name="heroShoppingBagSolid"></ng-icon>
     </div>
   </div>
 </div>

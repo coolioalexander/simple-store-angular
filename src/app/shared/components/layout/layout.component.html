@@ -1,5 +1,8 @@
 <app-header />
+@if ((cartModalShown$ | async) && ((cartCount$ | async) ?? 0) > 0) {
+  <app-cart-modal />
+}
 <main>
-    <ng-content></ng-content>
+  <ng-content></ng-content>
 </main>
 <app-footer />

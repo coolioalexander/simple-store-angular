@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+.cart-modal {
+  @apply absolute z-10 -m-1 right-5 w-3/4 md:w-2/5 lg:w-1/4 h-auto p-3 bg-white shadow;
+}
+
+.cart-modal-header {
+  @apply flex justify-between border-b border-gray-200 pb-1 mb-3;
+}
+
+.clear-btn {
+  @apply flex items-center text-[0.7rem] text-gray-900 cursor-pointer;
+}
+
+.clear-btn ng-icon {
+  @apply mr-[0.1rem];
+}
+
+.clear-btn p {
+  @apply text-[0.6rem] font-semibold;
+}
+
+.close-btn {
+  @apply m-1 cursor-pointer;
+}
+
+.cart-modal-footer {
+  @apply flex flex-col border-t border-gray-200 pt-2 mt-3 mb-1;
+}
+
+.cart-summary {
+  @apply flex justify-between text-sm text-gray-900;
+}
+
+.total-price {
+  @apply font-semibold;
+}
+
+.checkout-btn {
+  @apply bg-blue-500 text-white text-xs px-4 py-1 rounded mt-3 cursor-pointer;
+}

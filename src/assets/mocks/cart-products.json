@@ -12,5 +12,12 @@
     "description": "Apple Watch Series 9 (GPS, 41mm or 45mm)",
     "image": "images/product02.jpg",
     "price": 115
+  },
+  {
+    "id": 3,
+    "name": "Polaroid Now Gen 3",
+    "description": "Polaroid Now Generation 3 Instant Camera",
+    "image": "images/product03.jpg",
+    "price": 75
   }
 ]

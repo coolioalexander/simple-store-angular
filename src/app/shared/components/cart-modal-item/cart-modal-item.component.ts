@@ -1,9 +1,9 @@
 import { CurrencyPipe, NgOptimizedImage } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { heroTrash, heroMinus, heroPlus } from '@ng-icons/heroicons/outline';
-import { OrderItem } from '../../models/OrderItem';
-import { CartService } from '../../../core/services/cart.service';
+import { OrderItem } from '../../models/order-item';
+import { CartStateService } from '../../../core/services/cart-state.service';
 
 @Component({
   selector: 'app-cart-modal-item',
@@ -13,25 +13,24 @@ import { CartService } from '../../../core/services/cart.service';
   styleUrl: './cart-modal-item.component.css'
 })
 export class CartModalItemComponent {
-  @Input() cartItem!: OrderItem;
+  @Input('cart-item') cartItem!: OrderItem;
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartStateService: CartStateService) {}
 
   incrementCounter() {
-    if (this.cartItem.quantity < 10) 
       this.cartItem.quantity += 1;
   }
 
   decrementCounter() {
-    if (this.cartItem.quantity > 0)
+    if (this.cartItem.quantity > 1)
       this.cartItem.quantity -= 1;
   }
 
-  getItemPrice(): number {
+  getItemPrice() {
     return this.cartItem.product.price * this.cartItem.quantity;
   }
 
   removeCartItem() {
-    this.cartService.removeItem(this.cartItem.product);
+    this.cartStateService.removeItem(this.cartItem.product);
   }
 }

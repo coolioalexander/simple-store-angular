@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+.cart-item-container {
+  @apply flex my-2;
+}
+
+.cart-item-img {
+  @apply w-[60px] aspect-square object-cover grayscale-50 rounded;
+}
+
+.cart-item-content {
+  @apply flex flex-col justify-between grow ml-2 pb-[0.1rem];
+}
+
+.item-details {
+  @apply flex justify-between items-center;
+}
+
+.item-product-name {
+  @apply grow text-[0.7rem] text-gray-900;
+}
+
+.item-product-price {
+  @apply text-xs font-semibold text-gray-900;
+}
+
+.stock-badge {
+  @apply self-start px-1 rounded-xs bg-green-100 text-green-900 text-[0.5rem] font-semibold;
+}
+
+.remove-btn {
+  @apply flex items-center text-[0.7rem] cursor-pointer;
+}
+
+.remove-btn ng-icon {
+  @apply mr-[0.1rem];
+}
+
+.remove-btn p {
+  @apply text-[0.6rem] text-gray-900 font-semibold;
+}
+
+.cart-item-counter {
+  @apply flex items-center px-1 border-1 border-gray-200 text-gray-900 text-[0.65rem] font-semibold;
+}
+
+.item-count {
+  @apply [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none
+  w-4 text-center border-0 focus:outline-none mx-[2px];
+}

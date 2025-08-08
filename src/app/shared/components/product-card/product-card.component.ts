@@ -4,8 +4,7 @@ import { CurrencyPipe, NgOptimizedImage } from '@angular/common';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { heroShoppingBag, heroHeart } from '@ng-icons/heroicons/outline';
 import { heroShoppingBagSolid, heroHeartSolid } from '@ng-icons/heroicons/solid';
-import { CartService } from '../../../core/services/cart.service';
-import { log } from 'console';
+import { CartStateService } from '../../../core/services/cart-state.service';
 
 @Component({
   selector: 'app-product-card',
@@ -16,15 +15,15 @@ import { log } from 'console';
 })
 export class ProductCardComponent {
   favorite: boolean = false;
-  @Input() product!: Product;
+  @Input('product') product!: Product;
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartStateService: CartStateService) {}
 
   updateFavorite() {
     this.favorite = !this.favorite;
   }
 
   addToCart() {
-    this.cartService.addItem(this.product);
+    this.cartStateService.addItem(this.product);
   }
 }

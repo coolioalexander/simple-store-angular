@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.product-grid {
+  @apply m-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-[1.5rem];
+}

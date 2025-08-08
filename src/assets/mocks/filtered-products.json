@@ -5,12 +5,5 @@
     "description": "Sony WH-1000XM5 Wireless Noise-Canceling Headphones",
     "image": "images/product01.jpg",
     "price": 49
-  },
-  {
-    "id": 2,
-    "name": "Apple Watch Series9",
-    "description": "Apple Watch Series 9 (GPS, 41mm or 45mm)",
-    "image": "images/product02.jpg",
-    "price": 115
   }
 ]

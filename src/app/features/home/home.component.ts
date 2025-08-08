@@ -17,6 +17,6 @@ export class HomeComponent implements OnInit {
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
-    this.products$ = this.apiService.getProducts$();
+    this.products$ = this.apiService.getProducts();
   }
 }

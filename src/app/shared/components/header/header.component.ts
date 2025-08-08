@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { heroShoppingCart, heroMagnifyingGlass } from '@ng-icons/heroicons/outline';
-import { CartModalService } from '../../../core/services/cart-modal.service';
-import { CartService } from '../../../core/services/cart.service';
+import { CartModalStateService } from '../../../core/services/cart-modal-state.service';
+import { CartStateService } from '../../../core/services/cart-state.service';
 import { map, Observable, of } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { ApiService } from '../../../core/services/api.service';
@@ -18,19 +18,19 @@ export class HeaderComponent implements OnInit {
   cartCount$: Observable<number> = of(0);
 
   constructor(
-    private cartModalService: CartModalService, 
-    private cartService: CartService,
+    private cartModalStateService: CartModalStateService,
+    private cartStateService: CartStateService,
     private apiService: ApiService
   ) {}
 
-  ngOnInit(): void {
-    this.cartCount$ = this.cartService.getItems$().pipe(
+  ngOnInit() {
+    this.cartCount$ = this.cartStateService.getItems().pipe(
       map(items => items.length)
     );
   }
 
   showCartModal() {
-    this.cartModalService.showModal();
+    this.cartModalStateService.openModal();
   }
 
   search(keyword: string) {

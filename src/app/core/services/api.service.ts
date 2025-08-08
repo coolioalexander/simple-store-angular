@@ -1,23 +1,23 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../../shared/models/product';
-import { BehaviorSubject, combineLatest, filter, map, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, map } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  private searchKeywordSubject = new BehaviorSubject<string | null>(null);
+  private searchKeywordSubject$ = new BehaviorSubject<string | null>(null);
 
-  constructor(private http: HttpClient) {}
+  constructor(private httpClient: HttpClient) {}
 
   setSearchKeyword(keyword: string | null) {
-    this.searchKeywordSubject.next(keyword);
+    this.searchKeywordSubject$.next(keyword);
   }
 
-  getProducts$() {
-    const products$ = this.http.get<Product[]>('mocks/products.json');
-    const searchKeyword$ = this.searchKeywordSubject.asObservable();
+  getProducts() {
+    const products$ = this.httpClient.get<Product[]>('data/products.json');
+    const searchKeyword$ = this.searchKeywordSubject$.asObservable();
 
     return combineLatest([products$, searchKeyword$]).pipe(
       map(([products, searchKeyword]) => {

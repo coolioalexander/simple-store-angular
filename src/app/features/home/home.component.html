@@ -1,4 +1,4 @@
-<div class="my-4 mx-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
+<div class="product-grid">
     @for (product of products$ | async; track product.id) {
         <app-product-card [product]="product" />
     }

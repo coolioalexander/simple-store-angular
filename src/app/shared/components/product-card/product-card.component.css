@@ -1,6 +1,37 @@
-:host {
-  position: relative;
-  margin: 1rem 1rem;
-  border: solid 1px #f3f4f6;
-  cursor: pointer;
+@import "tailwindcss";
+
+.product-card {
+  @apply relative border border-solid border-gray-100 cursor-pointer;
+}
+
+.product-card-img {
+  @apply w-full h-[200px] object-cover grayscale-50;
+}
+
+.favorite-btn {
+  @apply absolute top-3 right-3 w-7 h-7 flex items-center justify-center rounded-full bg-gray-100 text-gray-900;
+}
+
+.product-card-content {
+  @apply p-3;
+}
+
+.product-name {
+  @apply text-sm text-gray-900 h-10 line-clamp-2;
+}
+
+.product-description {
+  @apply text-xs text-gray-600 h-8 line-clamp-2;
+}
+
+.product-card-footer {
+  @apply mt-4 flex items-center justify-between;
+}
+
+.product-price {
+  @apply text-base font-semibold text-gray-900;
+}
+
+.cart-btn {
+  @apply w-7 h-7 flex items-center justify-center rounded-full text-blue-500 hover:bg-blue-500 hover:text-white active:scale-95;
 }
